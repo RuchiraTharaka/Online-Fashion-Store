@@ -1,0 +1,269 @@
+html{
+  --background-color: #ffffff;
+  --itemset-background-color: #d5dbdb;
+  --default-light : #d0ece7;
+  --default : #16a085;
+  --default-dark : #0e6655;
+
+  --title-font-color : white;
+  --header-font-color: var(--default-light);
+  --header-hover-font-color: var(--default-dark);
+  --header-hover-color: white;
+  --header-background-image1: url("/assets/BackgroundImages/background10.jpg");
+  --header-background-image2: url("/assets/BackgroundImages/background12.jpg");
+  --header-background-image3: url("/assets/BackgroundImages/background11.jpg");
+  --header-background-image4: url("/assets/BackgroundImages/background13.jpg");
+  --header-background-image5: url("/assets/BackgroundImages/background14.jpg");
+
+
+  --login-theme-color : var(--default);
+  --login-inputFont-color : var(--default-dark);
+  --login-form-font-color : #514c4b;
+  --login-form-hover-font-color : black;
+  --login-button-font-color: white;
+  --login-background-image: url("/assets/BackgroundImages/background2.avif");
+  --restore-button-color : var(--default-dark);
+
+  --item-frame-color : white;
+  --item-font-color: black;
+
+  --product-background-color : white;
+  --product-name-font-color : black;
+  --product-price-font-color : #196f3d;
+  --product-description-font-color : #828f88 ;
+  --product-theme-color : var(--default);
+  --product-button-font-color : white;
+  --product-button-hover-color : var(--default-dark);
+
+  --footer-font-color : white;
+  --footer-background-color: #828f88;
+}
+header{
+  width: 100%;
+  height: fit-content;
+  margin: 0;
+  display: inline;
+  position: relative;
+  min-height: 7vh;
+}
+.head{
+  display: flex;
+}
+.refreshButton{
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 13px;
+  background-color: white;
+}
+.login{
+  margin-top: 1vh;
+  height: 91vh; /*880px*/
+  min-width: 300px;
+  overflow: scroll;
+  background-image: var(--login-background-image);
+  text-align: center;
+}
+.restoreButton {
+  border-radius: 4px;
+  background-color: var(--restore-button-color);
+  border: none;
+  color: var(--login-button-font-color);
+  text-align: center;
+  font-size: 14px;
+  padding: 5px;
+  width: 170px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 15px;
+  animation-duration: 3s;
+  animation-name: "restoreAnimation";
+}
+
+@keyframes restoreAnimation {
+  0%{
+    background-color: var(--restore-button-color);
+  }
+  20%{
+    background-color: purple;
+  }
+  40%{
+    background-color: var(--restore-button-color);
+  }
+  70%{
+    background-color: purple;
+  }
+  100%{
+    background-color: var(--restore-button-color);
+  }
+}
+
+.restoreButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.restoreButton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.restoreButton:hover span {
+  padding-right: 25px;
+}
+
+.restoreButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.Name{
+  width: 100%;
+  display: flex;
+}
+.logo{
+  width: 40px;
+  margin-left: 50px;
+}
+.title{
+  width: 70%;
+  text-align: center;
+  font-size: 19px;
+  color: var(--title-font-color);
+  letter-spacing: 4px;
+}
+.category{
+  text-align: center;
+  color:  var(--header-font-color);
+  width: 100%;
+  font-size: 19px;
+  border-radius: 0 0 10px 10px;
+}
+.category:hover{
+  background-color:   var(--header-hover-color);
+  color:  var(--header-hover-font-color);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  cursor: pointer;
+}
+body{
+  display: flex;
+  margin: 0;
+}
+.content{
+  height: 92vh;
+  overflow: scroll;
+  width: 100%;
+}
+.contentContainer{
+  width: 100%;
+  height: fit-content;
+}
+footer{
+  height: fit-content;
+  overflow-wrap: break-word;
+  color: var(--footer-font-color);
+  background-color: var(--footer-background-color);
+  margin: 5px 0 0 5px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footerLogo{
+  height: 160px;
+  margin-left: -70px;
+}
+.shopLabelAndLogo{
+  display: flex;
+  width: 35%;
+  align-items: center;
+}
+.shopLabel{
+  width: 80%;
+}
+.shopName{
+  font-size: 30px;
+  padding-bottom: 10px;
+  text-align: center;
+  letter-spacing: 4px;
+}
+.shopNameQuote{
+  text-align: center;
+}
+.branches{
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+}
+.branch{
+  text-align: center;
+  align-content: center;
+}
+.telePhoneNo{
+  margin-top: 8px;
+}
+.body{
+  display: inline-flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+  height: fit-content;
+  background-color: var(--itemset-background-color) ;
+  justify-content:space-around;
+  padding-bottom: 60px;
+  padding-top: 5px;
+}
+
+@media all and (max-width: 1400px) {
+  footer{
+    display: block;
+    align-items: center;
+  }
+  .shopLabelAndLogo{
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  .branches{
+    width: 100%;
+    display: flex;
+    padding-bottom: 20px;
+  }
+}
+@media all and (max-width: 600px) {
+  .branches{
+    display: block;
+    padding-bottom: 20px;
+  }
+  .branch{
+    padding: 10px;
+  }
+}
+@media all and (max-width: 800px) {
+  header{
+    height: 50%;
+  }
+  .head{
+    display: flow;
+    align-content: center;
+  }
+  .category{
+    border-radius: 0;
+  }
+  .category:hover{
+    border-radius: 0;
+  }
+  .login{
+    height: fit-content;
+  }
+  body{
+    display: block;
+  }
+  .content{
+    overflow: visible;
+  }
+}

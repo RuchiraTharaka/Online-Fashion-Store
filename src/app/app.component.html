@@ -1,0 +1,44 @@
+<html>
+  <header>
+    <div class="head" [style.background-image]="backgroundImages[currentCategory]">
+      <div class="Name">
+        <img class="logo" src="assets/whitelogo.svg">
+        <p class="title">{{shopName}}</p>
+      </div>
+      <div class="category" *ngFor="let category of categories" [style.background]="decideColor(category.id)" (click)="gotoCategory(category.id)">
+        <p >{{category.Name | titlecase}}</p>
+      </div>
+    </div>
+  </header>
+  <base href="/">
+  <body>
+    <div class="login">
+      <app-login></app-login>
+<!--      <button class="restoreButton" *ngIf="restoreButtonEnabled" (click)="restoreSession()"><span>restore last session</span></button>-->
+    </div>
+    <div class="content">
+      <div class="contentContainer">
+        <router-outlet></router-outlet>
+        <footer>
+          <div class="shopLabelAndLogo">
+            <div class="shopLabel">
+              <div class="shopName">{{shopName}}</div>
+              <div class="shopNameQuote">Online Fashion Store</div>
+            </div>
+            <img src="assets/logo.svg" class="footerLogo">
+          </div>
+          <div class="branches">
+            <div *ngFor="let branch of branches">
+              <div class="branch">
+                <div>{{branch.addressLine1}}</div>
+                <div>{{branch.addressLine2}}</div>
+                <div>{{branch.addressLine3}}</div>
+                <div class="telePhoneNo">{{branch.telePhoneNo}}</div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

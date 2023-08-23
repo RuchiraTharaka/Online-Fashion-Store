@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="imagesContainer">
+    <div class="images">
+      <div *ngFor="let image of productDetails.Images">
+        <img [src]="image">
+      </div>
+    </div>
+  </div>
+  <div class="productDetails">
+    <div class="nameAndPrice">
+      <div style="display: flex">
+        <div class="productName">{{productDetails.Name | titlecase}}</div>
+        <button *ngIf="loggedIn" class="update" (click)="gotoUpdate()">Update</button>
+      </div>
+      <div class="productPrice">{{productDetails.Price | currency:'Rs.'}}</div>
+      <div class="betweenTwo">
+        <div>
+          <div class="count">
+            <div>Count</div>
+            <input class="countInput" [value]="buyingItemCount">
+            <div class="controlUpAndDown">
+              <button (click)="increaseBuyingItemCount(true)" class="controlUp"></button>
+              <button *ngIf="buyingItemCount>0" (click)="increaseBuyingItemCount(false)" class="controlDown"></button>
+            </div>
+          </div>
+          <div class="sizeContainer">
+            <div>Sizes</div>
+            <div class="sizes">
+              <div *ngFor="let item of [].constructor(buyingItemCount); let i = index">
+                <select class="size">
+                  <option *ngFor="let size of productDetails.Sizes">{{size}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="shop">Shop Now</button>
+          <button class="shop">Add to cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="description">{{productDetails.Description}}</div>
+  </div>
+</div>
+
+

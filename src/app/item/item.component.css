@@ -1,0 +1,69 @@
+.item{
+  width: 350px;
+  height: 430px;
+  margin: 10px;
+  margin-bottom: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 15px 30px 60px -12px, rgba(0, 0, 0, 0.3) 15px 18px 36px -18px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  background: var(--item-frame-color);
+}
+.item:hover{
+  box-shadow: rgba(var(--item-frame-color), 0.25) 0px 48px 100px 0px;
+  width: 356px;
+  height: 436px;
+  margin: 3px;
+  margin-bottom: 21px;
+  border-radius: 0 0 15px 15px;
+  border: solid 4px var(--item-frame-color);
+}
+.item:hover .title{
+  font-size: 20px;
+}
+.item:hover .price{
+  color: var(--default-dark);
+  right: 0;
+  border-radius: 0;
+}
+.item:hover .heart{
+  display: flex;
+}
+.title{
+  font-size: 18px;
+  color: var(--item-font-color);
+  background-color:  var(--item-frame-color);
+  text-align: center;
+  padding: 20px;
+  overflow-wrap: break-word;
+}
+
+.image{
+  width: 100%;
+  background: var(--item-frame-color);
+}
+.priceLayout{
+  display: flex;
+}
+.price{
+  position: absolute;
+  bottom: 0;
+  border-radius: 0 15px 0 0;
+  left: 0;
+  color: var(--item-font-color);
+  font-size: 17px;
+  text-align: center;
+  background: var(--item-frame-color);
+  padding: 10px 30px 10px 20px;
+  overflow-wrap: break-word;
+}
+.heart{
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  height: 22px;
+}
+.heart:hover{
+  height: 24px;
+}
