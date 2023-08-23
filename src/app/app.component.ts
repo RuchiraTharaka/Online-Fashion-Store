@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
     },20) //This is not the best way (we have to wait until product component populates the categoryId)
   }
   public shopName = "Fabric Hop";
-  public currentCategory:any=0;//
+  public currentCategory:any=0;
   public backgroundImages:any =[];
   public categories:any = [];
   public branches:any = [];
@@ -47,5 +47,28 @@ export class AppComponent implements OnInit{
 
   public decideColor(i:number){
    return i==this.currentCategory?"rgb(255,255,255,0.5)":"";
+  }
+
+  inHome():any{
+    let currentRouterOutlet = this.globalConnectionsService.getRouterOutlet();
+    return this.currentCategory==0 && currentRouterOutlet=="itemlist"?"none":"inline-block";
+  }
+  back(){
+    let currentRouterOutlet = this.globalConnectionsService.getRouterOutlet();
+    if(currentRouterOutlet=="product"){
+      this.globalConnectionsService.setRouterOutlet("itemlist");
+      this.router.navigate(['']);
+    }else if(currentRouterOutlet=="itemlist"){
+      this.globalConnectionsService.setCurrentCategoryId(0);
+    }else if(currentRouterOutlet=="additem"){
+      if(this.currentCategory == 5){
+        this.globalConnectionsService.setCurrentCategoryId(0);
+        this.globalConnectionsService.setRouterOutlet("itemlist");
+        this.router.navigate(['']);
+      }else{
+        let ids = this.router.url.split('/');
+        this.router.navigate(['/product',this.currentCategory,ids[ids.length-1]]);
+      }
+    }
   }
 }

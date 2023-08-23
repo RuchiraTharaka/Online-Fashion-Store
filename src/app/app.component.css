@@ -56,6 +56,56 @@ header{
   border-radius: 13px;
   background-color: white;
 }
+.backButtonContainer{
+  width: 100%;
+  text-align: right;
+  margin-bottom: 2px;
+}
+.backButton {
+  border-radius: 0 0 0 15px;
+  background-color: var(--default-dark);
+  border: none;
+  color: var(--login-button-font-color);
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  height: 35px;
+  display: inline-block;
+}
+
+.backButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.backButton span:after {
+  content: '<<';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+
+.backButton:hover span {
+  padding-left:30px;
+}
+
+.backButton:hover span:after {
+  opacity: 1;
+  left: 5px;
+}
+
+.backButton:disabled,
+.backButton[disabled]{
+  background-color: grey;
+  color: #e5e8e8;
+}
 .login{
   margin-top: 1vh;
   height: 91vh; /*880px*/

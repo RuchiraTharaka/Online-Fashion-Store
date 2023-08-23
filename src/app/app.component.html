@@ -13,6 +13,9 @@
   <base href="/">
   <body>
     <div class="login">
+      <div class="backButtonContainer">
+        <button class="backButton" [style.display]="inHome()" (click)="back()" ><span>Back</span></button>
+      </div>
       <app-login></app-login>
 <!--      <button class="restoreButton" *ngIf="restoreButtonEnabled" (click)="restoreSession()"><span>restore last session</span></button>-->
     </div>
