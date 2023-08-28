@@ -1,8 +1,0 @@
-<div class="item" >
-  <div class="title">{{itemDetails.Name | titlecase}}</div>
-  <img class="image" (click)="gotoProduct()" [src]="itemDetails.Images[0]"/>
-  <div class="priceLayout">
-    <div class="price">{{itemDetails.Price | currency: 'Rs.'}}</div>
-    <img src="/assets/heart.svg" class="heart">
-  </div>
-</div>
