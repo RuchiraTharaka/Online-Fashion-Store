@@ -14,10 +14,8 @@ export class ProductInformationService {
     return this.httpClient.get("http://localhost:8080/otherservices/categories");
   }
 
-  public getNumberOfItems(Id:number){ ////////////////////////////////////
-    return this.httpClient.get("http://localhost:8080/itemlist/length/"+Id);
-  }
   public getAllDetails(Id:number){
+    console.log("Retrieved");
     return this.httpClient.get("http://localhost:8080/itemlist/"+Id);
   }
   public getProductDetails(Id1:number,Id2:number){

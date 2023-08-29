@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ProductInformationService} from "../product-information.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {GlobalConnectionsService} from "../global-connections.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-product',
@@ -11,9 +12,9 @@ import {GlobalConnectionsService} from "../global-connections.service";
 export class ProductComponent implements OnInit{
   public buyingItemCount:any = 1;
   public productDetails:any = {Id: null, "Name":"Product Name", "Description":"Description", "Price":0, "Sizes":[], "Images":[]};
-  public images:any=[];
   public productIds:any = [];
   public loggedIn = false;
+  subscription: Subscription | undefined;
   constructor(public informationService: ProductInformationService, private route: ActivatedRoute, private globalConnectionsService:GlobalConnectionsService, private router:Router) {
     this.globalConnectionsService.setRouterOutlet("product");
   }
@@ -23,7 +24,7 @@ export class ProductComponent implements OnInit{
     this.globalConnectionsService.setCurrentCategoryIdWhenBack(this.productIds[0]);
     this.informationService.getProductDetails(this.productIds[0],this.productIds[1])
       .subscribe(data => this.productDetails = data);
-    this.globalConnectionsService.getUserLoggedInState().subscribe((val)=>{
+    this.subscription = this.globalConnectionsService.getUserLoggedInState().subscribe((val)=>{
       this.loggedIn = val;
     })
   }
@@ -38,6 +39,10 @@ export class ProductComponent implements OnInit{
       --this.buyingItemCount;
     }
 
+  }
+
+  ngOnDestroy(){
+    this.subscription?.unsubscribe();
   }
 
 }

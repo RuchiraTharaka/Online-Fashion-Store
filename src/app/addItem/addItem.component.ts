@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { ProductInformationService} from "../product-information.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {GlobalConnectionsService} from "../global-connections.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-addItem',
@@ -13,6 +14,7 @@ export class AddItemComponent implements OnInit{
   public categories:{'id':number,Name:string}[]=[];
   public existingItemID:any = null;
   public userLoggedIn = true;
+  subscription:Subscription | undefined;
 
   constructor(private informationService: ProductInformationService, private router: Router, private route: ActivatedRoute, private globalConnectionsService:GlobalConnectionsService) {
     this.informationService.getCategories()
@@ -87,4 +89,7 @@ export class AddItemComponent implements OnInit{
     this.item.Sizes.splice(index,1);
   }
 
+  ngOnDestroy(){
+    this.subscription?.unsubscribe();
+  }
 }
