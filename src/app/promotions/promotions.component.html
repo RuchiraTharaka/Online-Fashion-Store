@@ -1,1 +1,7 @@
-<p>promotions works!</p>
+<div class="promotionListContainer">
+  <div class="promotionList">
+    <div *ngFor="let promotion of promotions">
+      <img class="promotion" [src]="promotion">
+    </div>
+  </div>
+</div>

@@ -1,8 +1,8 @@
 .container{
   height: fit-content;
   background: rgba(255, 255, 255, 0.4); /* Green background with 30% opacity */
-  border: solid var(--login-theme-color) 3px;
-  border-radius: 10px;
+  border: solid var(--default-dark) 3px;
+  border-radius: 0 0 15px 15px;
   padding: 5px;
   text-align: center;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;

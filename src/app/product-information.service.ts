@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 //
@@ -15,7 +15,6 @@ export class ProductInformationService {
   }
 
   public getAllDetails(Id:number){
-    console.log("Retrieved");
     return this.httpClient.get("http://localhost:8080/itemlist/"+Id);
   }
   public getProductDetails(Id1:number,Id2:number){

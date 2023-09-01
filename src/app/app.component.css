@@ -56,16 +56,23 @@ header{
   border-radius: 13px;
   background-color: white;
 }
+.login{
+  margin-top: 0.6vh;
+  height: 91vh; /*880px*/
+  min-width: 300px;
+  overflow: scroll;
+  background-image: var(--login-background-image);
+}
 .backButtonContainer{
   width: 100%;
+  background-color: var(--default-dark);
   text-align: right;
-  margin-bottom: 2px;
 }
 .backButton {
   border-radius: 0 0 0 15px;
-  background-color: var(--default-dark);
-  border: none;
-  color: var(--login-button-font-color);
+  background-color: white;
+  border: 1px solid var(--default);
+  color: var(--default-dark);
   text-align: center;
   font-size: 15px;
   padding: 5px;
@@ -105,14 +112,6 @@ header{
 .backButton[disabled]{
   background-color: grey;
   color: #e5e8e8;
-}
-.login{
-  margin-top: 1vh;
-  height: 91vh; /*880px*/
-  min-width: 300px;
-  overflow: scroll;
-  background-image: var(--login-background-image);
-  text-align: center;
 }
 .restoreButton {
   border-radius: 4px;

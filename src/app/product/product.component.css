@@ -131,6 +131,12 @@ img{
   margin-bottom: 4px;
   color: white;
 }
+.size:hover{
+  background-color: white;
+  color: var(--default-dark);
+  border: 1px solid var(--default-dark);
+  margin-right: 2px;
+}
 .shop{
   background-color: var(--product-theme-color);
   width: 150px;

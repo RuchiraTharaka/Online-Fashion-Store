@@ -4,8 +4,10 @@ import { ProductComponent} from "./product/product.component";
 import {AddItemComponent} from "./addItem/addItem.component";
 import {ItemListComponent} from "./item-list/item-list.component";
 import {ItemComponent} from "./item/item.component";
+import {PromotionsComponent} from "./promotions/promotions.component";
 
 const routes: Routes = [
+  {path: 'promotions', component:PromotionsComponent},
   {path: 'product/:categoryId/:productId', component:ProductComponent},
   {path: 'addItem/:categoryId/:productId', component:AddItemComponent},
   {path: 'addItem', component:AddItemComponent},
