@@ -1,3 +1,7 @@
+A web application for an Online Fashion Store was developed by me as a project in internship programme at Avtra. This is the front end implementation of it using Angular. What this basically does is, receiving data from the back end, showing details of the items to be sold, updating and adding new data whenever user want.
+
+I have impemented the data retrieving in three ways.
+
 # TestApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
