@@ -1,6 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductInformationService} from "../product-information.service";
-import {ActivatedRoute} from "@angular/router";
 import {GlobalConnectionsService} from "../global-connections.service";
 import {Subscription} from "rxjs";
 
@@ -13,7 +12,7 @@ export class ItemListComponent implements OnInit, OnDestroy{
   public itemDetailsList:any;
   public currentCategory:any=null;
   subscription: Subscription | undefined
-  constructor(public informationService: ProductInformationService, private route: ActivatedRoute, private globalConnectionsService:GlobalConnectionsService) {
+  constructor(public informationService: ProductInformationService, private globalConnectionsService:GlobalConnectionsService) {
 
   }
 

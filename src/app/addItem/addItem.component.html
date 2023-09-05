@@ -13,7 +13,7 @@
         <div class="formItemContainers">
           <label class="formNames">Category</label>
           <div>
-            <select vallue="kkkk" style="border-color: white" [disabled]="!userLoggedIn" required name="Category" #Category="ngModel" [(ngModel)]="item.Category" [style.border-color]="checkInvalidity(Category.invalid)" ngModel>
+            <select style="border-color: white" [disabled]="!userLoggedIn" required name="Category" #Category="ngModel" [(ngModel)]="item.Category" [style.border-color]="checkInvalidity(Category.invalid)" ngModel>
               <option *ngFor="let category of categories" [selected]="category.Name==item.Category" >{{category.Name}}</option>
             </select>
             <div *ngIf="Category.invalid" class="reminder">Pick a category</div>

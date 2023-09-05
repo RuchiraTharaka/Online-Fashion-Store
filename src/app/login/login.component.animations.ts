@@ -1,4 +1,4 @@
-import {trigger, state, style, transition, animate, keyframes} from "@angular/animations";
+import {trigger, style, transition, animate, keyframes} from "@angular/animations";
 
 export const LoginComponentAnimations = {
   loginAnimationTrigger :
